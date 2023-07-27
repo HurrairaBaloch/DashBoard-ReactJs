@@ -1,18 +1,31 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-export default function RecentOrder() {
+const RecentOrder = () => {
   const [recentOrderData, setRecentOrderData] = useState([]);
 
- useEffect(() => {
-   axios
-     .get("https://jsonplaceholder.typicode.com/users")
-     .then((response) => {
-       setRecentOrderData(response.data);
-     })
-     .catch((error) => {
-       console.error("Error fetching data:", error);
-     });
- }, []);
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((response) => {
+        setRecentOrderData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
+  // USING FETCH
+
+  // useEffect(() => {
+  //   fetch("https://dummyjson.com/products")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setRecentOrderData(data.products);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //     });
+  // }, []);
 
   return (
     <div className="bg-white rounded-sm border border-gray-200 flex flex-col flex-1">
@@ -46,4 +59,6 @@ export default function RecentOrder() {
       </div>
     </div>
   );
-}
+};
+
+export default RecentOrder;

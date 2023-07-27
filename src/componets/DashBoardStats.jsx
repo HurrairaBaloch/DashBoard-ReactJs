@@ -1,6 +1,6 @@
 import { IoBagHandle, IoPieChart, IoPeople, IoCart } from "react-icons/io5";
 import PropTypes from "prop-types";
-export default function DashboardStats() {
+const DashboardStats = () => {
   return (
     <div className="flex gap-4">
       <BoxWrapper>
@@ -65,7 +65,7 @@ export default function DashboardStats() {
       </BoxWrapper>
     </div>
   );
-}
+};
 
 BoxWrapper.propTypes = {
   children: PropTypes.node.isRequired,
@@ -77,3 +77,4 @@ function BoxWrapper({ children }) {
     </div>
   );
 }
+export default DashboardStats;

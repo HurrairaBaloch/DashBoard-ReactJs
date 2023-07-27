@@ -72,7 +72,7 @@ const data = [
   },
 ];
 
-export default function TransactionChart() {
+const TransactionChart = () => {
   return (
     <div className="h-[22rem] bg-white p-4 rounded-sm border border-gray-200 flex flex-col flex-1">
       <strong className="text-gray-700 font-medium">Transactions</strong>
@@ -101,4 +101,6 @@ export default function TransactionChart() {
       </div>
     </div>
   );
-}
+};
+
+export default TransactionChart;
